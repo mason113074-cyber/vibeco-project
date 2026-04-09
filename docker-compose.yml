@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vibeco-backend
+    ports:
+      - "8000:8000"
+    networks:
+      - vibeco-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vibeco-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # 瀏覽器從你的電腦連 API 時用 localhost；容器內若需打後端可用主機名 backend
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - vibeco-net
+
+networks:
+  vibeco-net:
+    driver: bridge

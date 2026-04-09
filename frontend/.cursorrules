@@ -1,0 +1,1 @@
+這裡只寫 TypeScript/Next.js，禁止寫 Python。必須使用 Tailwind CSS。所有的狀態管理與表單強制使用 react-hook-form + Zod。API 呼叫失敗時要在畫面上顯示白話文錯誤，禁止顯示 console 報錯代碼。

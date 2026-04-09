@@ -1,0 +1,1 @@
+這裡只寫 Python FastAPI，禁止寫前端畫面。所有 API 必須定義 Pydantic 規格。收到 422 錯誤必須拋出清楚的 JSON 讓前端畫紅線。
